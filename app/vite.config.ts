@@ -15,6 +15,11 @@ export default defineConfig(({ mode }) => {
     css: {
       modules: {
         localsConvention: 'dashes'
+      },
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler'
+        }
       }
     },
     server: {
