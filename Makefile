@@ -2,6 +2,11 @@ APP_DIR := app
 DOCKER_COMPOSE := docker compose
 SERVICE := app
 
+ifneq (,$(wildcard .env))
+include .env
+export
+endif
+
 .DEFAULT_GOAL := help
 
 .PHONY: help install dev build preview test lint clean \
