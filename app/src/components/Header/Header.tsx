@@ -11,7 +11,7 @@ const Header: FC = () => {
     return (
         <div className={s.pageHeader}>
             <UiTooltip placement={'bottom'} content={'Documentation'}>
-                <a href={'https://github.com/evscoder/react-starter'} className={s.pageHeader__title} target={'_blank'}>
+                <a href={'https://github.com/evscoder/react-app'} className={s.pageHeader__title} target={'_blank'}>
                     <img src={imagePath('Logo.svg')} alt={'React Starter'} width={120}></img>
                     <Icon name={'icon-keyboard-down'} />
                     {data.title}

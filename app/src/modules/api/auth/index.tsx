@@ -7,7 +7,7 @@ const getAuthData = createAsyncThunk<IAuthState, void, { rejectValue: string }>(
     'slice/getAuth',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axios.get<IAuthState>(`${paths.api}/data.json`);
+            const response = await axios.get<IAuthState>(`${paths.api}/app`);
             return response.data;
         } catch (error) {
             return rejectWithValue('Server Error');

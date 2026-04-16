@@ -9,7 +9,7 @@ endif
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install dev build preview test lint clean \
+.PHONY: help install dev build preview test lint clean server-install server-dev server-start \
 	docker-config docker-build docker-up docker-up-prod docker-down docker-restart \
 	docker-logs docker-shell docker-install docker-reinstall docker-clean
 
@@ -22,6 +22,9 @@ help:
 	@printf "  make test           Run tests locally\n"
 	@printf "  make lint           Run lint locally\n"
 	@printf "  make clean          Remove local build artifacts\n"
+	@printf "  make server-install Install Express server dependencies\n"
+	@printf "  make server-dev     Run Express server locally\n"
+	@printf "  make server-start   Run Express server without watch mode\n"
 	@printf "  make docker-config  Validate docker compose config\n"
 	@printf "  make docker-build   Build docker image\n"
 	@printf "  make docker-up      Start docker dev container\n"
@@ -54,6 +57,15 @@ lint:
 
 clean:
 	rm -rf $(APP_DIR)/dist $(APP_DIR)/coverage
+
+server-install:
+	cd server && npm install
+
+server-dev:
+	cd server && npm run dev
+
+server-start:
+	cd server && npm start
 
 docker-config:
 	$(DOCKER_COMPOSE) config
