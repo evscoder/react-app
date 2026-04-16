@@ -1,0 +1,5 @@
+/.env
+/compose.override.yaml
+/.idea
+.vscode/*
+!.vscode/extensions.json

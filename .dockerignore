@@ -1,0 +1,10 @@
+.git
+.idea
+.codex
+app/node_modules
+app/dist
+app/coverage
+node_modules
+dist
+coverage
+npm-debug.log*

@@ -1,0 +1,21 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  background-color: var(--primary-color);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 0.9rem;
+  padding: 0 20px;
+  outline: 0;
+  text-decoration: none;
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+}

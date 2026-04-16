@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: my-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${VITE_PORT:-4200}:4200"
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    env_file:
+      - .env
