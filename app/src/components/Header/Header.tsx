@@ -2,11 +2,11 @@ import s from './Header.module.scss';
 import {FC} from 'react';
 import Icon from '../ui/Icon/Icon.tsx';
 import imagePath from '../../utils/imagePath.ts';
-import {useSelector} from 'react-redux';
-import {RootState} from '../../store.tsx';
 import UiTooltip from '../ui/Tooltip/UiTooltip.tsx';
+import { useGetAppDataQuery } from '../../modules/api/auth';
+
 const Header: FC = () => {
-    const {data} = useSelector((state: RootState) => state.slice);
+    const { data } = useGetAppDataQuery();
 
     return (
         <div className={s.pageHeader}>
@@ -14,7 +14,7 @@ const Header: FC = () => {
                 <a href={'https://github.com/evscoder/react-app'} className={s.pageHeader__title} target={'_blank'}>
                     <img src={imagePath('Logo.svg')} alt={'React Starter'} width={120}></img>
                     <Icon name={'icon-keyboard-down'} />
-                    {data.title}
+                    {data?.title}
                 </a>
             </UiTooltip>
         </div>
