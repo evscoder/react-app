@@ -3,7 +3,7 @@ services:
     container_name: app-api
     build:
       context: .
-      dockerfile: server/Dockerfile
+      dockerfile: docker/server/Dockerfile
     ports:
       - "${API_PORT:-3001}:3001"
     volumes:
@@ -14,7 +14,7 @@ services:
     container_name: my-app
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker/app/Dockerfile
       args:
         APP_PORT: ${APP_PORT:-4200}
     ports:
