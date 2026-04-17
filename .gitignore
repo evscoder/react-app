@@ -3,3 +3,5 @@
 .vscode/*
 !.vscode/extensions.json
 node_modules/
+/server/dist/
+/server/storage/

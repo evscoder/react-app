@@ -7,13 +7,32 @@ export const appApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: paths.api
     }),
+    tagTypes: ['AppData'],
     endpoints: builder => ({
         getAppData: builder.query<IAuthState, void>({
-            query: () => 'app'
+            query: () => 'app',
+            providesTags: ['AppData']
+        }),
+        updateAppTitle: builder.mutation<IAuthState, string>({
+            query: title => ({
+                url: 'app/title',
+                method: 'PUT',
+                body: { title }
+            }),
+            invalidatesTags: ['AppData']
+        }),
+        deleteAppTitle: builder.mutation<IAuthState, void>({
+            query: () => ({
+                url: 'app/title',
+                method: 'DELETE'
+            }),
+            invalidatesTags: ['AppData']
         })
     })
 });
 
 export const {
-    useGetAppDataQuery
+    useDeleteAppTitleMutation,
+    useGetAppDataQuery,
+    useUpdateAppTitleMutation
 } = appApi;

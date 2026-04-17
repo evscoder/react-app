@@ -9,6 +9,7 @@ export interface ButtonProps {
     href?: string,
     id?: string,
     title?: string,
+    type?: 'button' | 'submit' | 'reset',
     disabled?: boolean,
     onClick?: MouseEventHandler<HTMLButtonElement> | ChangeEvent<HTMLButtonElement> | undefined | any,
     children?: React.ReactNode,
