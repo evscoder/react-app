@@ -1,9 +1,13 @@
 ## Quick Start
 
-Create local environment file:
-
 ```bash
+git clone git@github.com:evscoder/react-app.git my-new-project
+cd my-new-project
+rm -rf .git
+git init
 cp .env.example .env
+git add .
+git commit -m "Initial project from template"
 ```
 
 Run development containers:
