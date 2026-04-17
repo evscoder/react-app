@@ -8,8 +8,8 @@
   }
 
   &__center {
-    display: grid;
-    place-content: center;
+    margin-inline: auto;
+    margin-top: 16vh;
   }
 
   &__form {
@@ -47,6 +47,7 @@
       font: inherit;
       min-height: 48px;
       padding: 0 14px;
+      width: 100%;
     }
   }
 
@@ -54,6 +55,16 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    justify-content: flex-end;
+  }
+
+  &__loader {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78));
+    border: 1px solid rgba(32, 40, 51, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 18px 44px rgba(32, 40, 51, 0.12);
+    padding: 12px 14px;
   }
 
   &__status,

@@ -1,0 +1,127 @@
+.loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 56px;
+  color: var(--black);
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  &__mark {
+    position: relative;
+    display: grid;
+    flex: 0 0 auto;
+    height: 48px;
+    place-items: center;
+    width: 48px;
+  }
+
+  &__ring {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    inset: 7px;
+
+    &:nth-child(1) {
+      animation: loader-orbit 1400ms linear infinite;
+      border-left-color: #278afe;
+      border-top-color: #278afe;
+    }
+
+    &:nth-child(2) {
+      animation: loader-orbit 1900ms linear infinite reverse;
+      border-bottom-color: #39d0bd;
+      border-right-color: #39d0bd;
+      inset: 11px;
+    }
+
+    &:nth-child(3) {
+      animation: loader-pulse 1200ms ease-in-out infinite;
+      background:
+        linear-gradient(135deg, rgba(255, 94, 94, 0.2), rgba(39, 138, 254, 0.1));
+      border-color: rgba(32, 40, 51, 0.14);
+      inset: 15px;
+    }
+  }
+
+  &__core {
+    animation: loader-core 1300ms ease-in-out infinite;
+    background: #202833;
+    border-radius: 6px;
+    height: 10px;
+    width: 10px;
+  }
+
+  &__dot {
+    animation: loader-scan 1300ms ease-in-out infinite;
+    background: #ff5e5e;
+    border-radius: 50%;
+    box-shadow: 0 0 14px rgba(255, 94, 94, 0.65);
+    height: 7px;
+    position: absolute;
+    width: 7px;
+  }
+
+  &__label {
+    line-height: 1.25;
+  }
+}
+
+@keyframes loader-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.86) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12) rotate(45deg);
+  }
+}
+
+@keyframes loader-core {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.72);
+  }
+}
+
+@keyframes loader-scan {
+  0%,
+  100% {
+    transform: translate(-18px, -18px);
+  }
+
+  25% {
+    transform: translate(18px, -18px);
+  }
+
+  50% {
+    transform: translate(18px, 18px);
+  }
+
+  75% {
+    transform: translate(-18px, 18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader {
+    &__ring,
+    &__core,
+    &__dot {
+      animation-duration: 2400ms;
+    }
+  }
+}
