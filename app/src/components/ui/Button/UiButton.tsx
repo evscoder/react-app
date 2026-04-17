@@ -1,32 +1,60 @@
-import React, {ChangeEvent, forwardRef, MouseEventHandler} from 'react';
+import {ComponentPropsWithoutRef, ReactNode, forwardRef} from 'react';
 import s from './UiButton.module.scss';
 import cn from 'clsx';
-import {Colors} from '../../../types/types.ts';
+import {Colors, Rounded, Sizes} from '../../../types/types.ts';
 import {Link} from 'react-router-dom';
 
-export interface ButtonProps {
-    link?: boolean,
-    href?: string,
-    id?: string,
-    title?: string,
-    type?: 'button' | 'submit' | 'reset',
-    disabled?: boolean,
-    onClick?: MouseEventHandler<HTMLButtonElement> | ChangeEvent<HTMLButtonElement> | undefined | any,
-    children?: React.ReactNode,
-    color: Colors,
-    classNames?: string,
-}
+type BaseButtonProps = {
+    color?: Colors;
+    size?: Sizes;
+    rounded?: Rounded;
+    classNames?: string;
+    disabled?: boolean;
+    children?: ReactNode;
+};
 
-const UiButton = forwardRef<HTMLButtonElement, ButtonProps>(({link, id, children, color, classNames, ...props }, ref) => {
-    const buttonClasses = cn(s.button, color && s[`button--${color}`], classNames);
+type NativeButtonProps = BaseButtonProps & Omit<ComponentPropsWithoutRef<'button'>, 'color' | 'disabled'> & {
+    link?: false;
+    href?: never;
+};
+
+type LinkButtonProps = BaseButtonProps & Omit<ComponentPropsWithoutRef<typeof Link>, 'color' | 'to'> & {
+    link: true;
+    href: string;
+};
+
+export type ButtonProps = NativeButtonProps | LinkButtonProps;
+
+const UiButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+    const color = props.color ?? 'primary';
+    const size = props.size ?? 'md';
+    const rounded = props.rounded ?? 'md';
+    const buttonClasses = cn(
+        s.button,
+        s[`button--${color}`],
+        s[`button--${size}`],
+        s[`button--rounded-${rounded}`],
+        props.disabled && s['button--disabled'],
+        props.classNames
+    );
+
+    if (props.link) {
+        return (
+            <Link
+                {...props}
+                aria-disabled={props.disabled}
+                data-testid={props.id}
+                to={props.href}
+                className={buttonClasses}
+            >
+                { props.children }
+            </Link>
+        );
+    }
 
     return (
-        link ?
-        <Link {...props} data-testid={id} to={props.href as string} className={buttonClasses}>
-            { children }
-        </Link> :
-        <button {...props} ref={ref} id={id} data-testid={id} className={buttonClasses}>
-            { children }
+        <button {...props} ref={ref} data-testid={props.id} className={buttonClasses}>
+            { props.children }
         </button>
     );
 });

@@ -3,13 +3,40 @@
 :root {
     --black: #202833;
     --gray: #626263;
+    --gray-light: #eef1f5;
+    --gray-dark: #3f4652;
     --white: #ffffff;
     --blue: #278AFE;
+    --blue-dark: #1166c9;
     --red: #FF5E5E;
+    --red-dark: #d93636;
+    --green: #22c55e;
+    --green-dark: #15803d;
+    --yellow: #facc15;
+    --yellow-dark: #a16207;
+    --pink: #ec4899;
+    --pink-dark: #be185d;
+    --cyan: #06b6d4;
+    --cyan-dark: #0e7490;
     --purple: rebeccapurple;
+    --purple-dark: #4b1d74;
 
     --primary-color: var(--blue);
-    --secondary-color: var(--blue);
+    --primary-color-hover: var(--blue-dark);
+    --secondary-color: var(--gray-light);
+    --secondary-color-hover: #dde3eb;
+    --success-color: var(--green);
+    --success-color-hover: var(--green-dark);
+    --danger-color: var(--red);
+    --danger-color-hover: var(--red-dark);
+    --warning-color: var(--yellow);
+    --warning-color-hover: #eab308;
+    --info-color: var(--cyan);
+    --info-color-hover: var(--cyan-dark);
+    --purple-color: var(--purple);
+    --purple-color-hover: var(--purple-dark);
+    --pink-color: var(--pink);
+    --pink-color-hover: var(--pink-dark);
     --background-color: var(--purple);
 	--text-color: var(--white);
 
