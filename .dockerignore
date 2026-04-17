@@ -4,6 +4,8 @@
 app/node_modules
 app/dist
 app/coverage
+server/node_modules
+server/dist
 node_modules
 dist
 coverage

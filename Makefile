@@ -81,7 +81,7 @@ docker-up:
 	$(DOCKER_COMPOSE) up
 
 docker-up-prod:
-	NODE_ENV=production $(DOCKER_COMPOSE) up --build
+	$(DOCKER_COMPOSE) -f docker-compose.prod.yml up --build
 
 docker-down:
 	$(DOCKER_COMPOSE) down
