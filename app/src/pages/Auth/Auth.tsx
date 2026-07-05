@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useState } from 'react';
 import s from './Auth.module.scss';
-import useTitle from '../../hooks/useTitle.tsx';
+import useTitle from '../../shared/hooks/useTitle.tsx';
 import Header from '../../components/Header/Header.tsx';
 import Footer from '../../components/Footer/Footer.tsx';
 import cn from 'clsx';

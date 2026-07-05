@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import imagePath from '../../../utils/imagePath.ts';
+import imagePath from '../../../shared/utils/imagePath.ts';
 
 export interface IconProps {
     name: string,

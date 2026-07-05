@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { PATHS_CONFIG } from './paths.ts';
-import Auth from '../pages/Auth/Auth.tsx';
+import Auth from '../Auth/Auth.tsx';
 
 const {
     home

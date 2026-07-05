@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'clsx';
-import UiError from '../components/ui/Forms/UiError.tsx';
+import UiError from '../../components/ui/Forms/UiError.tsx';
 
 export interface WithFieldErrorProps {
     className?: string;

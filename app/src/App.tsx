@@ -1,7 +1,7 @@
 import './tailwind.css';
 import './styles.scss';
 import 'simplebar-react/dist/simplebar.min.css';
-import Routing from './routing';
+import Routing from './pages/routing';
 
 function App() {
   return (

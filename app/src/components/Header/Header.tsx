@@ -1,7 +1,7 @@
 import s from './Header.module.scss';
 import {FC} from 'react';
 import Icon from '../ui/Icon/Icon.tsx';
-import imagePath from '../../utils/imagePath.ts';
+import imagePath from '../../shared/utils/imagePath.ts';
 import UiTooltip from '../ui/Tooltip/UiTooltip.tsx';
 
 const Header: FC = () => {
