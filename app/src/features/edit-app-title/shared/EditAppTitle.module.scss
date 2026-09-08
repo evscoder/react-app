@@ -1,0 +1,70 @@
+.editor {
+  &__form {
+    display: grid;
+    gap: 18px;
+    width: min(100%, 460px);
+    text-align: left;
+  }
+
+  &__eyebrow {
+    color: var(--primary-color);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  &__field {
+    display: grid;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    input {
+      border: 1px solid #c8c8d0;
+      border-radius: 8px;
+      font: inherit;
+      min-height: 48px;
+      padding: 0 14px;
+      width: 100%;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+
+  &__loader {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78));
+    border: 1px solid rgba(32, 40, 51, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 18px 44px rgba(32, 40, 51, 0.12);
+    padding: 12px 14px;
+  }
+
+  &__status,
+  &__error {
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  &__error {
+    color: #b42318;
+  }
+
+  &__submit {
+    min-width: 300px;
+  }
+}

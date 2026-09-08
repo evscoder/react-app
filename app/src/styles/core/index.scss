@@ -4,6 +4,9 @@
 @use "keyframes" as *;
 @use "icons" as *;
 @use "extends" as *;
-@use "core" as *;
+@use "base" as *;
 @use "typography" as *;
 @use "page" as *;
+@use "ui/index" as *;
+@use "layouts/index" as *;
+

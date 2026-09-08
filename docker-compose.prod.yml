@@ -1,6 +1,5 @@
 services:
   api:
-    container_name: app-api-prod
     build:
       context: .
       dockerfile: docker/server/Dockerfile
@@ -9,9 +8,7 @@ services:
     environment:
       NODE_ENV: production
     command: sh -c "npm run build && npm start"
-
   app:
-    container_name: my-app-prod
     build:
       context: .
       dockerfile: docker/app/Dockerfile
