@@ -1,0 +1,32 @@
+.page-header {
+  margin-top: auto;
+  padding: 20px;
+
+  &__title {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    :global(img) {
+      grid-column: 1 / -1;
+    }
+
+    :global(svg) {
+      width: 60px;
+      height: 60px;
+      color: var(--primary-color);
+      transform: rotate(-90deg);
+      transition: transform 200ms ease-in-out;
+    }
+
+    &:hover {
+      :global(svg) {
+        transform: rotate(-90deg) translateY(10px);
+      }
+    }
+  }
+}

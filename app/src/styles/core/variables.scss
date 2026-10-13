@@ -1,0 +1,66 @@
+@use "../plugins/media" as *;
+
+:root {
+  --black: #1f2937;
+  --black1: #6b7280;
+  --white: #ffffff;
+  --gray: #f8f9fb;
+  --gray1: #f3f4f6;
+  --gray2: #e5e7eb;
+  --gray3: #d1d5db;
+  --green: #15803d;
+  --green1: #166534;
+  --red: #dc2626;
+  --red1: #b91c1c;
+  --yellow: #fbbf24;
+  --yellow1: #f59e0b;
+  --blue: #2563eb;
+  --blue1: #1d4ed8;
+  --blue2: #dbeafe;
+
+  --primary-color: var(--blue);
+  --primary-color-hover: var(--blue1);
+  --secondary-color: var(--gray1);
+  --secondary-color-hover: var(--gray2);
+  --success-color: var(--green);
+  --success-color-hover: var(--green1);
+  --danger-color: var(--red);
+  --danger-color-hover: var(--red1);
+  --warning-color: var(--yellow);
+  --warning-color-hover: var(--yellow1);
+  --info-color: var(--blue);
+  --info-color-hover: var(--blue1);
+  --background-color: var(--gray);
+  --surface-color: var(--white);
+  --text-color: var(--black);
+  --text-muted-color: var(--black1);
+  --border-color: var(--gray3);
+  --focus-color: var(--blue2);
+  --on-primary-color: var(--white);
+
+  --t-time: 0.2s;
+  --t-base: var(--t-time) ease-in-out;
+  --t-smooth: cubic-bezier(.215, .61, .355, 1);
+  --t-elastic: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --font-size-base: 16px;
+  --font-family-default: 'Open Sans';
+  --font-family-secondary: 'Open Sans';
+  --font-feature: 'pnum' on, 'lnum' on;
+
+  --base-container-width: 1200;
+  --container-gutter: 20px;
+  --container-width: calc(var(--base-container-width) * 1px + var(--container-gutter) * 2);
+
+  @media (width < bp('lg')) {
+
+  }
+
+  @media (width < bp('md')) {
+
+  }
+}
+
+@media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
+
+}

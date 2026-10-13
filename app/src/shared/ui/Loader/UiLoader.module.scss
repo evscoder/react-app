@@ -1,0 +1,34 @@
+.loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 24px;
+  color: var(--text-muted-color);
+  font-size: 0.875rem;
+
+  &__mark {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: loader-spin 800ms linear infinite;
+  }
+
+  &__label {
+    line-height: 1.5;
+  }
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader__mark {
+    animation: none;
+  }
+}

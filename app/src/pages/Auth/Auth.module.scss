@@ -1,0 +1,15 @@
+.auth {
+  flex-grow: 1;
+  display: grid;
+
+  &__container {
+    display: grid;
+    align-items: start;
+    padding-block: clamp(32px, 8vh, 88px);
+  }
+
+  &__center {
+    width: min(100%, 480px);
+    margin-inline: auto;
+  }
+}
